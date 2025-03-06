@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Excel</title>
+    <style>
+        /* Estilo da tabela */
+        table {
+            border-collapse: collapse; /* Remove espaços entre as células */
+            width: 300px; /* Largura da tabela */
+            margin: 20px auto; /* Centraliza a tabela */
+        }
+        th, td {
+            border: 1px solid #000; /* Borda das células */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Alinhamento do texto */
+        }
+        th {
+            background-color: #f2f2f2; /* Cor de fundo do cabeçalho */
+            font-weight: bold; /* Texto em negrito */
+        }
+        td {
+            background-color: #fff; /* Cor de fundo das células */
+        }
+        td[contenteditable="true"]:focus {
+            background-color: #e6f7ff; /* Cor de fundo ao editar */
+            outline: none; /* Remove a borda padrão do focus */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Tabela Excel</h1>
+    <table id="tb1">
+        
+    </table>
+    <script>
+        let str = `<thead>
+            <tr>
+                <th>` 
+                    + String.fromCharCode(64 + 1) // Colunas A, B, C, etc.
+                    + `</th>`
+                    + `<th>` 
+                    + String.fromCharCode(64 + 2) // Colunas A, B, C, etc.
+                    + `</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+        </tbody>`;
+
+        document.getElementById("tb1").innerHTML = str;
+
+    </script>
+</body>
+</html>

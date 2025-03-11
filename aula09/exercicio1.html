@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sugestões para Aulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .sugestoes-box {
+            background-color: #ffffff;
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .sugestoes-box p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .destaque-tema {
+            background-color: #e8f5e9;
+            border-color: #1b5e20;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="sugestoes-box" id="sugestoesContainer">
+        <h2>Sugestões para Melhorar Nossas Aulas:</h2>
+        <p>1. Mais atividades práticas e exercícios interativos</p>
+        <p>2. Uso de exemplos do mundo real nas explicações teóricas</p>
+        <p>3. Sessões de dúvidas semanais focadas em exercícios</p>
+        <p>4. Introdução de estudos de caso relacionados ao conteúdo</p>
+        <p>5. Feedback individualizado periódico sobre o progresso</p>
+    </div>
+
+    <script>
+        const container = document.getElementById('sugestoesContainer');
+        
+        container.addEventListener('mouseover', () => {
+            container.style.backgroundColor = '#f1f8e9';
+            container.style.borderColor = '#2e7d32';
+            container.style.transform = 'scale(1.02)';
+        });
+
+        container.addEventListener('mouseout', () => {
+            container.style.backgroundColor = '#ffffff';
+            container.style.borderColor = '#4CAF50';
+            container.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

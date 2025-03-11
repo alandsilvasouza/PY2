@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela Excel</title>
+    <title>Document</title>
     <style>
         /* Estilo da tabela */
         table {
@@ -30,34 +30,35 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Tabela Excel</h1>
-    <table id="tb1">
-        
-    </table>
-    <script>
-        let str = `<thead>
+    <table>
+        <thead>
             <tr>
-                <th>` 
-                    + String.fromCharCode(64 + 1) // Colunas A, B, C, etc.
-                    + `</th>`
-                    + `<th>` 
-                    + String.fromCharCode(64 + 2) // Colunas A, B, C, etc.
-                    + `</th>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td contenteditable="true"></td>
-                <td contenteditable="true"></td>
+                <th>1</th>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td contenteditable="true"></td>
-                <td contenteditable="true"></td>
+                <th>2</th>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
-        </tbody>`;
-
-        document.getElementById("tb1").innerHTML = str;
-
-    </script>
+            <tr>
+                <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

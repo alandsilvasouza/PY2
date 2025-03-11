@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="conteiner">
+    <script> /*Java*/
+        function entrou_mouse()
+        {
+            let conteiner = document.getElementById("conteiner")
+            conteiner.classList.remove("texto-azul")
+            conteiner.classList.add("texto-vermelho")
+
+        }
+        function saiu_mouse()
+        {
+            let conteiner = document.getElementById("conteiner")
+            conteiner.classList.remove("texto-vermelho")
+            conteiner.classList.add("texto-azul")
+
+        }
+    </script>
+    <style> /*CSS*/
+        .texto-vermelho {
+                color: rgb(255, 0, 0);
+                border-width: 2px;
+                border-style: dashed;
+                border-radius: 3px;
+                display: inline-block;
+          }
+        .texto-azul {
+                color: rgb(111, 0, 255);
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 3px;
+                display: inline-block;
+          }
+
+    </style> 
+    <p class="texto-vermelho" onmouseover="entrou_mouse()" >Sem sugestão 1</p> 
+    <p class="texto-azul" onmouseover="saiu_mouse()">Sem sugestão 2</p>
+
+</body>
+</html>

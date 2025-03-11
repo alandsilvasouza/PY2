@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestões para Melhoria das Aulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            border: 2px solid black;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+        }
+        .container p {
+            color: black;
+        }
+        .dark-mode {
+            background-color: black;
+            color: white;
+            border-color: red;
+        }
+        .dark-mode p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="sugestoes">
+        <p>1. Incluir mais atividades práticas.</p>
+        
+        <p>2. Disponibilizar materiais complementares online.</p>
+       
+        <p>3. Fixar os computadores para os alunos.</p>
+    </div>
+
+    <script>
+        const container = document.getElementById("sugestoes");
+        
+        container.addEventListener("mouseover", function() {
+            container.classList.add("dark-mode");
+        });
+        
+        container.addEventListener("mouseout", function() {
+            container.classList.remove("dark-mode");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        .sem_mouse {
+            color: red;
+        }
+        .com_mouse {
+            color: blue;
+        }
+    </style>
+</head>  
+<body>
+    <h1>Olá, Daniel</h1>  
+    <p id="paragrafo" class="sem_mouse">
+        A seguir sugestões do que ensinar em aula e formas de aplição e didática 
+        a introdução do conteúdo e exemplos de utilização são de extrema importancia. 
+        a seguir a apresentação de um problema seguido de um exemplo de resolução 
+        a intelegicia artificial pode ser uma grande aliada para gerar exercicios de fixação em aula.
+        Seguiro de 5 a 10 exercicios de fixação após explicação com exemplo de resolução na segunda parte da aula.
+        FIM
+    </p>
+
+    <script>
+        document.getElementById('paragrafo').addEventListener('mouseover', function() {
+            this.classList.remove('sem_mouse');
+            this.classList.add('com_mouse');
+        });
+
+        document.getElementById('paragrafo').addEventListener('mouseout', function() {
+            this.classList.remove('com_mouse');
+            this.classList.add('sem_mouse');
+        });
+    </script>
+</body>
+</html>

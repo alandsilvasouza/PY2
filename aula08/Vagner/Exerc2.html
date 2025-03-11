@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -75,11 +76,49 @@
             <button >Calcular IMC</button>
         </form>
         
-        <div id="resultado"></div>
+        <div id="
+        "></div>
     </div>
 
     <script>
-       let imc = peso / (altura * 2); //formula IMC
+       //let imc = peso / (altura * 2); //formula IMC
+
+
+
+        document.querySelector('button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+
+            let peso = parseFloat(document.getElementById('peso').value);
+            let altura = parseFloat(document.getElementById('altura').value);
+            let imc = peso / (altura * 2); //formula IMC
+
+            let resultado = document.getElementById('resultado');
+
+            if (imc < 18.5) {
+                document.getElementById('resultado').style.backgroundColor = '#f1c40f';
+                document.getElementById('resultado').innerHTML = `Seu IMC é ${imc.toFixed(2)} (Abaixo do peso)`;
+            } else if (imc >= 18.5 && imc < 24.9) {
+                resultado.style.backgroundColor = '#2ecc71';
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} (Peso normal)`;
+            } else if (imc >= 25 && imc < 29.9) {
+                resultado.style.backgroundColor = '#f39c12';
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} (Sobrepeso)`;
+            } else if (imc >= 30 && imc < 34.9) {
+                resultado.style.backgroundColor = '#e74c3c';
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} (Obesidade grau 1)`;
+            } else if (imc >= 35 && imc < 39.9) {
+                resultado.style.backgroundColor = '#c0392b';
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} (Obesidade grau 2)`;
+            } else {
+                resultado.style.backgroundColor = '#e74c3c';
+                resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} (Obesidade grau 3)`;
+            }
+        });
+
+
+
+
     </script>
 </body>
 </html>

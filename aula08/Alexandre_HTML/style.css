@@ -1,0 +1,110 @@
+html{
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    font-family: 'Anonymous Pro', monospace;
+    background-color: black;
+    display: flex;
+}
+
+h1 {
+    position: relative;
+    margin: center;
+    font-size: 250%;
+    text-align: center;
+    white-space: nowrap;
+    overflow:hidden
+}
+
+h2{
+    position: relative;
+    left: 100px;
+    top: 150px;
+    margin: center;
+    font-size: 250%;
+    text-align: center;
+    white-space: nowrap;
+    overflow:hidden
+}
+form{
+    position:relative;
+    left: -300px;
+    top: 250px;
+    margin: center;
+    font-size: 250%;
+    text-align: center;
+    white-space: nowrap;
+    overflow:hidden
+}
+
+.pgmedia {
+    width: 100%;
+}
+.media input {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.media textarea {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.botaoCalcular {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 1px;
+}
+.media input {
+    padding-left: 20px;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.media textarea {
+    padding-left: 20px;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.botaoCalcular {
+    border-radius: 4px;
+    color: #fff;
+    padding: 2px 40px;
+    height: 40px;
+    margin-top: 18px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: #B22222;
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #500707;
+    border-right: 1px solid #500707;
+    position: center;
+}
+.botaoCalcular:hover {
+    opacity: 1.0;
+    transition: 1s;
+}

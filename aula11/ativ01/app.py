@@ -1,6 +1,7 @@
 # Importações necessárias
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import re  # Para manipulação de strings
 
 # Configuração do aplicativo Flask
 app = Flask(__name__)
@@ -43,10 +44,16 @@ def index():
 def adicionar_contato():
     """Adiciona um novo contato à agenda"""
     if request.method == 'POST':
-        # Cria novo contato com dados do formulário
+        # Limpa o telefone (remove caracteres não numéricos)
+        telefone_limpo = re.sub(r'\D', '', request.form['telefone'])
+        
+        # Valida se tem 11 dígitos (xx) xxxxx-xxxx
+        if len(telefone_limpo) != 11:
+            return render_template('formulario.html', error="Telefone deve ter 11 dígitos!")
+        
         novo_contato = Contato(
             nome=request.form['nome'],
-            telefone=request.form['telefone'],
+            telefone=telefone_limpo,  # Salva apenas números
             email=request.form['email']
         )
         db.session.add(novo_contato)
@@ -61,9 +68,15 @@ def editar_contato(id):
     contato = Contato.query.get_or_404(id)
     
     if request.method == 'POST':
-        # Atualiza os dados do contato
+        # Limpa o telefone (remove caracteres não numéricos)
+        telefone_limpo = re.sub(r'\D', '', request.form['telefone'])
+        
+        # Valida se tem 11 dígitos (xx) xxxxx-xxxx
+        if len(telefone_limpo) != 11:
+            return render_template('formulario.html', contato=contato, error="Telefone inválido!")
+        
         contato.nome = request.form['nome']
-        contato.telefone = request.form['telefone']
+        contato.telefone = telefone_limpo
         contato.email = request.form['email']
         db.session.commit()
         return redirect(url_for('index'))
@@ -73,10 +86,19 @@ def editar_contato(id):
 @app.route('/excluir/<int:id>')
 def excluir_contato(id):
     """Exclui um contato da agenda"""
-    contato = Contato.query.get_or_404(id)
-    db.session.delete(contato)
-    db.session.commit()
+    contato = Contato.query.get(id)
+    if contato:
+        db.session.delete(contato)
+        db.session.commit()
     return redirect(url_for('index'))
+
+# Filtro para formatar o telefone nos templates
+@app.template_filter('format_telefone')
+def format_telefone(numero):
+    """Formata o telefone no formato (xx) xxxxx-xxxx"""
+    if len(numero) != 11:
+        return numero
+    return f'({numero[:2]}) {numero[2:7]}-{numero[7:]}'
 
 # --------------------------------------------
 # Execução do Aplicativo

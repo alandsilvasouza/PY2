@@ -60,6 +60,7 @@ def db_to_file(db_path, output_file_path):
         
 def main():
     print('Iniciando busca ao tesouro...')
+    #grupo https://meet.google.com/dnw-emhx-gfm
     # use força bruta para descriptogravar o segredo.enc
     # esse arquivo encontra-se dentro do arquivos.db no formato sqllite
     # a chave é numérica de 8 digitos

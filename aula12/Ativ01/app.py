@@ -62,7 +62,7 @@ def main():
     print('Iniciando busca ao tesouro...')
     # use força bruta para descriptogravar o segredo.enc
     # esse arquivo encontra-se dentro do arquivos.db no formato sqllite
-    #
+    # a chave é numérica de 8 digitos
 
     
     

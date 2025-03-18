@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-EXERCÍCIO DE BUSCA AO TESOURO - CRIPTOGRAFIA XOR (CHAVE DE 8 DÍGITOS)
-Objetivo: Encontrar a chave numérica de 8 dígitos para descriptografar o arquivo secreto
-"""
+import sqlite3
+import os
 
 # Função para criptografar um arquivo usando operação XOR com chave numérica de 8 dígitos.
 def criptografar_arquivo(arquivo_entrada, arquivo_saida, chave):
@@ -29,12 +26,6 @@ def xor_bytes(dados, chave):
     """
     return bytes([dado ^ chave[i % len(chave)] for i, dado in enumerate(dados)])
 
-
-def carregar_arquivo_criptografado(nome_arquivo):
-    """Retorna o arquivo"""
-    with open(nome_arquivo, 'rb') as f:
-        return f.read()
-
 def tentar_descriptografia(dados_cripto, chave_tentativa):
     """
     Tenta descriptografar com uma chave de 8 dígitos.
@@ -47,8 +38,31 @@ def tentar_descriptografia(dados_cripto, chave_tentativa):
     except UnicodeDecodeError:
         return None
 
+def db_to_file(db_path, output_file_path):
+    # Conecta ao banco de dados
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    # Busca o BLOB correspondente ao nome do arquivo
+    cursor.execute('''
+        SELECT .....
+    ''')
+    
+    blob_data = cursor.fetchone()
+    conn.close()
+    
+    if not blob_data:
+        raise ValueError(f"Arquivo não encontrado no banco de dados")
+    
+    # Escreve o conteúdo BLOB no arquivo de saída
+    with open(output_file_path, 'wb') as file:
+        file.write(blob_data[0])
+        
 def main():
     print('Iniciando busca ao tesouro...')
+    # use força bruta para descriptogravar o segredo.enc
+    # esse arquivo encontra-se dentro do arquivos.db no formato sqllite
+    #
 
     
     
@@ -66,6 +80,5 @@ ESTRATÉGIAS SUGERIDAS:
 1. Divisão de tarefas:
    - Dividir o intervalo 0-99999999 entre os membros do grupo
    - Ex: Cada membro testa 12.500.000 chaves (100M / 8 pessoas)
-
 
 """

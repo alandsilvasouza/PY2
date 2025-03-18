@@ -63,6 +63,7 @@ def main():
     # use força bruta para descriptogravar o segredo.enc
     # esse arquivo encontra-se dentro do arquivos.db no formato sqllite
     # a chave é numérica de 8 digitos
+    # o texto descriptografado contém a palavra Parabéns
 
     
     
